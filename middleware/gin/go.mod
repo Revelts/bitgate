@@ -4,7 +4,7 @@ go 1.25
 
 require (
 	github.com/gin-gonic/gin v1.10.1
-	github.com/Revelts/bitgate v0.0.0
+	github.com/Revelts/bitgate v0.1.0
 )
 
 require (
