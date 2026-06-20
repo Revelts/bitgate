@@ -1,4 +1,7 @@
-# BitGate
+<h1 align="center">BitGate</h1>
+
+<img width="1231" height="585" alt="Screenshot 2026-06-20 at 20 56 02" src="https://github.com/user-attachments/assets/b7da5b11-0bf4-4162-ab22-acade1967c30" />
+
 
 A framework-agnostic **RBAC / permission engine for Go**, powered by dynamic
 bitsets. Register permissions, define roles with inheritance, assign roles and
