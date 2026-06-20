@@ -35,6 +35,7 @@ e.Can("alice", "post.write") // true
 	- [Performance](#performance)
 	- [Project layout](#project-layout)
 	- [Stability guarantee](#stability-guarantee)
+	- [Documentation](#documentation)
 	- [Roadmap](#roadmap)
 	- [License](#license)
 
@@ -182,7 +183,7 @@ func main() {
 ```
 
 Full persistence walkthrough (Postgres + Redis schemas, registry migrations,
-role composition): **[docs/PERSISTENCE.md](docs/PERSISTENCE.md)**.
+role composition): **[Persistence guide (wiki)](https://github.com/Revelts/bitgate/wiki/Persistence)**.
 
 ## Core concepts
 
@@ -231,7 +232,7 @@ mux.Handle("/admin", guard.RequireAny("admin", "superuser")(admin)) // needs any
 | Echo v4 | `github.com/Revelts/bitgate/middleware/echo` | `echo.MiddlewareFunc` |
 
 chi reuses the `nethttp` adapter (same `func(http.Handler) http.Handler` shape).
-Per-framework examples: **[docs/MIDDLEWARE.md](docs/MIDDLEWARE.md)**.
+Per-framework examples: **[Middleware guide (wiki)](https://github.com/Revelts/bitgate/wiki/Middleware)**.
 
 ## Performance
 
@@ -263,7 +264,6 @@ permset.go         stateless mode (Registry, Set, Union)
 middleware/
   nethttp/         net/http + chi adapter (stdlib only)
   gin/  fiber/  echo/   per-framework adapters (own go.mod)
-docs/              full documentation
 ```
 
 Core packages never depend on middleware packages.
@@ -277,8 +277,16 @@ has been stored, or every stored value is silently corrupted.
 current bit unchanged; a new name takes the next free bit and never disturbs the
 existing ones. Persist the mapping (`Export`) after registering new permissions,
 and reload it on boot (`LoadRegistry`). Never reorder or delete registrations for
-a live dataset — see [docs/PERSISTENCE.md](docs/PERSISTENCE.md#migrations) for the
-migration playbook.
+a live dataset — see the [Persistence guide](https://github.com/Revelts/bitgate/wiki/Persistence#migrations)
+for the migration playbook.
+
+## Documentation
+
+Full documentation lives in the **[project wiki](https://github.com/Revelts/bitgate/wiki)**:
+
+- [API Reference](https://github.com/Revelts/bitgate/wiki/API) — every type, function, signature, error, and complexity note
+- [Persistence](https://github.com/Revelts/bitgate/wiki/Persistence) — saving sets to Postgres/Redis, registry lifecycle, migrations
+- [Middleware](https://github.com/Revelts/bitgate/wiki/Middleware) — net/http, chi, Gin, Fiber, Echo adapters
 
 ## Roadmap
 
