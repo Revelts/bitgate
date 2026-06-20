@@ -38,9 +38,19 @@ e.Can("alice", "post.write") // true
 	- [Performance](#performance)
 	- [Project layout](#project-layout)
 	- [Stability guarantee](#stability-guarantee)
-	- [Documentation](#documentation)
 	- [Roadmap](#roadmap)
 	- [License](#license)
+
+---
+
+## Documentation
+
+Full documentation lives in the **[project wiki](https://github.com/Revelts/bitgate/wiki)**:
+
+- [API Reference](https://github.com/Revelts/bitgate/wiki/API) — every type, function, signature, error, and complexity note
+- [Persistence](https://github.com/Revelts/bitgate/wiki/Persistence) — saving sets to Postgres/Redis, registry lifecycle, migrations
+- [Middleware](https://github.com/Revelts/bitgate/wiki/Middleware) — net/http, chi, Gin, Fiber, Echo adapters
+
 
 ---
 
@@ -282,14 +292,6 @@ existing ones. Persist the mapping (`Export`) after registering new permissions,
 and reload it on boot (`LoadRegistry`). Never reorder or delete registrations for
 a live dataset — see the [Persistence guide](https://github.com/Revelts/bitgate/wiki/Persistence#migrations)
 for the migration playbook.
-
-## Documentation
-
-Full documentation lives in the **[project wiki](https://github.com/Revelts/bitgate/wiki)**:
-
-- [API Reference](https://github.com/Revelts/bitgate/wiki/API) — every type, function, signature, error, and complexity note
-- [Persistence](https://github.com/Revelts/bitgate/wiki/Persistence) — saving sets to Postgres/Redis, registry lifecycle, migrations
-- [Middleware](https://github.com/Revelts/bitgate/wiki/Middleware) — net/http, chi, Gin, Fiber, Echo adapters
 
 ## Roadmap
 
