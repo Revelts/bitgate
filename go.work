@@ -1,0 +1,11 @@
+go 1.25.0
+
+// Local development workspace tying the core module together with the
+// per-framework middleware modules. The framework adapters are separate modules
+// so importing the core never pulls in Gin/Fiber/Echo dependencies.
+use (
+	.
+	./middleware/echo
+	./middleware/fiber
+	./middleware/gin
+)

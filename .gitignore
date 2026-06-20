@@ -1,0 +1,12 @@
+# Local agent instructions — not part of the published library
+CLAUDE.md
+
+# Go
+*.test
+*.out
+coverage.*
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
